@@ -1,6 +1,7 @@
 module Snake
   class Controller
     attr_reader :keys
+    attr_accessor :link
 
     def initialize(map: {}, action_down: {}, action_up: {}, link: nil)
       @keys = Hash.new { false }

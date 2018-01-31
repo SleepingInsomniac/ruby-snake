@@ -4,11 +4,6 @@ module Snake
       super(640, 480)
       self.caption = "Snake"
       @scale = 20
-      new_game!
-    end
-
-    def new_game!
-      @player = Player.new
       @controller = Controller.new(
         map: {
           82 => :up,
@@ -21,9 +16,14 @@ module Snake
           down: :down,
           left: :left,
           right: :right
-        },
-        link: @player
+        }
       )
+      new_game!
+    end
+
+    def new_game!
+      @player = Player.new
+      @controller.link = @player
       generate_apple
     end
 
