@@ -1,4 +1,4 @@
-require "bundler/setup"
+$LOAD_PATH.unshift(File.join(__dir__, '..', 'lib'))
 require "snake"
 
 RSpec.configure do |config|
