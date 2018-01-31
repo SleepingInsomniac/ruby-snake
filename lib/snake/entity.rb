@@ -1,5 +1,3 @@
-require 'matrix'
-
 module Snake
   class Entity
     attr_accessor :position, :size, :speed, :color, :z_index
