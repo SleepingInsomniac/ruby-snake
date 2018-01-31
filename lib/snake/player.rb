@@ -10,7 +10,7 @@ module Snake
       @head = Entity.new(size: Vector[1,1])
       @speed = Vector[1,0]
       @segments = []
-      @length = 5
+      @length = 1
       @alive = true
     end
 
@@ -55,19 +55,19 @@ module Snake
     # Controls
 
     def up
-      @speed = Vector[0,-1]
+      @speed = Vector[0,-1] unless @speed == Vector[0,1]
     end
 
     def down
-      @speed = Vector[0,1]
+      @speed = Vector[0,1] unless @speed == Vector[0,-1]
     end
 
     def left
-      @speed = Vector[-1,0]
+      @speed = Vector[-1,0] unless @speed == Vector[1,0]
     end
 
     def right
-      @speed = Vector[1,0]
+      @speed = Vector[1,0] unless @speed == Vector[-1,0]
     end
   end
 end
